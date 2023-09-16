@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
-  * _printf - function that produces 
-  * output according to a format.
+  * _printf - function that produces
+  * output according to a format
   * @format: a character string
-  * @Return: the number of characters printed
+  * Return: the number of characters printed
   */
 
 int _printf(const char *format, ...)
@@ -14,9 +14,7 @@ va_list list_of_args;
 
 if (format == NULL)
 	return (-1);
-
 va_start(list_of_args, format);
-
 while (*format)
 {
 	if (*format != '%')
@@ -45,15 +43,15 @@ while (*format)
 	{
 		char *str = va_arg(list_of_args, char*);
 		int str_len = 0;
-		
+
 		while (str[str_len] != '\0')
 			str_len++;
 		write(1, str, str_len);
 		char_print += str_len;
 	}
 	}
-
-	va_end(list_of_args);
-	return (char_print);
+	format++;
 }
+va_end(list_of_args);
+return (char_print);
 }
