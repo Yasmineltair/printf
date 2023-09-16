@@ -11,5 +11,8 @@ int _printf(const char *format, ...);
 void print_char(char c, int *char_print);
 void print_str(char *str, int *char_print);
 
+/* Declaration of 'd' and 'i' conversion specifiers */
+void print_int(int num, int *char_print);
+
 #endif /* MAIN_H */
 
