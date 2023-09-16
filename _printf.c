@@ -29,7 +29,7 @@ while (*format)
 		format++;
 		if (*format == '\0')
 			break;
-	if (*format == '%')
+		else if (*format == '%')
 	{
 		write(1, format, 1);
 		char_print++;
