@@ -26,7 +26,7 @@ void print_str(char *str, int *char_print)
 
 	while (str[str_len] != '\0')
 	{
-		write(1,&str[str_len], 1);
+		write(1, &str[str_len], 1);
 		str_len++;
 		(*char_print)++;
 	}
