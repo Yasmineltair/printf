@@ -28,11 +28,11 @@ while (*format)
 			break;
 	else if (*format == '%')
 		{
-	print_char(*format, &char_print);
+		print_char(*format, &char_print);
 	}
 	else if (*format == 'c')
 	{
-	char c = va_arg(list_of_args, int);
+		int c = va_arg(list_of_args, int);
 
 		print_char(c, &char_print);
 	}
