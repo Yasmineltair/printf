@@ -12,8 +12,7 @@ void print_char(char c, int *char_print)
 char buf[OUTPUT_BUF_SIZE];
 if (c == BUF_FLUSH || *char_print >= OUTPUT_BUF_SIZE)
 {
-	write(1, buf, *char_print)
-		*char_print = 0;
+	write(1, buf, 1)
 }
 	if (c != BUF_FLUSH)
 		buf[*char_print++] = c;
