@@ -25,7 +25,7 @@ while (*format)
 	}
 	else if (*format == 'c')
 	{
-	char  c = va_arg(list_of_args, int);
+	int c = va_arg(list_of_args, int);
 
 		print_char(c, &char_print);
 	}
@@ -37,9 +37,11 @@ while (*format)
 		{
 		print_str(str, &char_print);
 		}
-		else
-		print_char(*format, &char_print);
 	}
+		else
+		{
+		print_char(*format, &char_print);
+		}
 	format++;
 }
 va_end(list_of_args);
