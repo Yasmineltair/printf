@@ -13,7 +13,7 @@ char buf[OUTPUT_BUF_SIZE];
 if (c == BUF_FLUSH || *char_print >= OUTPUT_BUF_SIZE)
 {
 	write(1, buf, *char_print)
-		i = 0;
+		*char_print = 0;
 }
 	if (c != BUF_FLUSH)
 		buf[*char_print++] = c;
