@@ -26,7 +26,7 @@ while (*format)
 		format++;
 		if (*format == '\0')
 			break;
-else if (*format == '%')
+	else if (*format == '%')
 		{
 	print_char(*format, &char_print);
 	}
