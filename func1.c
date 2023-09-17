@@ -14,8 +14,7 @@ if (c == BUF_FLUSH || &char_print >= OUTPUT_BUF_SIZE)
 {
 	if (c != BUF_FLUSH)
 		buf[&char_print++] = c;
-	return (1);
-}
+	}
 
 /**
   * print_str - function to print string
