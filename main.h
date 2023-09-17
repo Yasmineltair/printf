@@ -14,8 +14,5 @@ int _printf(const char *format, ...);
 void print_char(char c, int *char_print);
 void print_str(char *str, int *char_print);
 
-/* Prototype for the new function */
-void print_integer(va_list args, int *char_count);
-
 #endif /* MAIN_H */
 
