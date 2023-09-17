@@ -16,7 +16,6 @@ if (format == NULL || (format[0] == '%' && !format[1]))
 if (format[0] == '%' && format[1] == ' ' && !format[2])
 	return (-1);
 va_start(list_of_args, format);
-
 while (*format)
 {
 	if (*format != '%')
