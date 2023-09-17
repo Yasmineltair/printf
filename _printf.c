@@ -41,55 +41,10 @@ while (*format)
 		char *str = va_arg(list_of_args, char*);
 
 		print_str(str, &char_print);
-	}
-	else if (*format == 'd' || *format == 'i')
-	{
-		int num = va_arg(list_of_args, int);
-
-		print_int(num, &char_print);
 		}
-
 	}
 	format++;
 }
 va_end(list_of_args);
 return (char_print);
-
-/**
- * print_int - function to print an integer
- * @num: the integer to print
- * @char_print: pointer to print iterator
- */
-
-void print_int(int num, int *char_print)
-{
-	char buffer[OUTPUT_BUF_SIZE];
-	
-	int i = 0;
-	
-	int is_negative = 0;
-
-	if (num == 0)
-	{
-		print_char('0', char_print);
-		return;
-	}
-	if (num < 0)
-	{
-		is_negative = 1;
-		num = -num;
-	}
-	while (num != 0)
-	{
-		buffer[i++] = num % 10 + '0';
-		num = num / 10;
-	}
-	if (is_negative)
-	{
-		buffer[i++] = '-';
-	}
-	for (i = i - 1; i >= 0; i--)
-	{
-		print_char(buffer[i], char_print);
-	}
 }
