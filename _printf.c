@@ -17,16 +17,9 @@ if (format == NULL || (format[0] == '%' && !format[1]))
 va_start(list_of_args, format);
 while (*format)
 {
-	if (*format != '%')
-	{
-		print_char(*format, &char_print);
-	}
-	else
-	{
+	if (*format == '%')
 		format++;
-	if (*format == '\0')
-		break;
-	else if (*format == '%')
+	if (*format == '%')
 	{
 	print_char(*format, &char_print);
 	}
@@ -40,8 +33,12 @@ while (*format)
 	{
 		char *str = va_arg(list_of_args, char*);
 
+		while (*str)
+		{
 		print_str(str, &char_print);
 		}
+		else
+		print_char(*format, &char_print);
 	}
 	format++;
 }
