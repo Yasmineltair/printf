@@ -32,7 +32,7 @@ while (*format)
 	}
 	else if (*format == 'c')
 	{
-		int c = va_arg(list_of_args, int);
+		char c = va_arg(list_of_args, int);
 
 		print_char(c, &char_print);
 	}

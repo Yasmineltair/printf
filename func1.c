@@ -22,13 +22,12 @@ write(1, &c, 1);
 
 void print_str(char *str, int *char_print)
 {
-	if (str == NULL)
-	str == "(null)";
+	int str_len = 0;
 
-	while (*str)
+	while (str[str_len] != '\0')
 	{
-		write(1, str, 1);
-		str++;
+		write(1,&str[str_len], 1);
+		str_len++;
 		(*char_print)++;
 	}
 }
