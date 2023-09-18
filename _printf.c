@@ -17,11 +17,7 @@ if (format == NULL || (format[0] == '%' && !format[1]))
 va_start(list_of_args, format);
 while (*format)
 {
-	if (*format != '%')
-	{
-		print_char(*format, &char_print);
-	}
-	else
+	if (*format == '%')
 	{
 		format++;
 		if (*format == '%')
@@ -41,7 +37,9 @@ while (*format)
 		print_str(str, &char_print);
 	}
 		else
-print_char(*format, &char_print);
+		{
+			print_char(*format, &char_print);
+	}
 	}
 	format++;
 }
