@@ -9,8 +9,14 @@
 
 void print_char(char c, int *char_print)
 {
-write(1, &c, 1);
-(*char_print)++;
+int buff_ind = 0;
+char buffer[BUFF_SIZE];
+
+buffer[buff_index++] = 'c';
+if (buff_ind == BUFF_SIZE)
+{
+print_buffer(buffer, &buff_index)
+char_print += buff_ind;
 	}
 
 /**
@@ -22,12 +28,32 @@ write(1, &c, 1);
 
 void print_str(char *str, int *char_print)
 {
-	int str_len = 0;
+int buff_ind = 0;
+char buffer[BUFF_SIZE];
 
-	while (str[str_len] != '\0')
+buffer[buff_ind++] = *str;
+str++;
+if (buff_ind == BUFF_SIZE)
+		{
+		print_buffer(buffer, &buff_ind);
+char_print += buff_ind;
+}
+
+/**
+  * print_buffer - function to print buffers
+  * @buffer: buffer array
+  * @buff_ind: buffer index
+  * Return: void
+  */
+
+void print_buffer(char buffer[], int *buff_ind)
+{
+	if (*buff_ind > 0)
 	{
-		write(1, &str[str_len], 1);
-		str_len++;
-		(*char_print)++;
+		for (int i = 0; i < *buff_ind; i++)
+		{
+			write(1, buffer[i], 1);
+		}
 	}
+	*buff_ind = 0;
 }

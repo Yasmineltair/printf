@@ -13,5 +13,6 @@ int _printf(const char *format, ...);
 /* Function prototypes for additional print functions */
 void print_char(char c, int *char_print);
 void print_str(char *str, int *char_print);
+void print_buffer(char buffer[], int *buff_ind);
 
 #endif /* MAIN_H */
