@@ -1,4 +1,5 @@
 #include "main.h"
+#include "handle_d_i.h"
 
 /**
   * _printf - function that produces output
@@ -34,6 +35,14 @@ while (*format)
 		char *str = va_arg(list_of_args, char*);
 
 		print_str(str, &char_print);
+	}
+ 	else if (*format == 'd')
+	{
+		handle_d(list_of_args, &char_print);
+	}
+	else if (*format == 'i')
+	{
+		handle_i(list_of_args, &char_print);
 	}
 		else
 		{

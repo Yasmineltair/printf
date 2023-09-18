@@ -15,4 +15,3 @@ void print_char(char c, int *char_print);
 void print_str(char *str, int *char_print);
 
 #endif /* MAIN_H */
-
