@@ -44,7 +44,8 @@ while (*format)
 	{
 		print_char(*format, &char_print);
 	}
-	format++;
+		format++;
+}
 va_end(list_of_args);
 return (char_print);
 }
