@@ -13,7 +13,6 @@ va_list list_of_args;
 
 if (format == NULL || (format[0] == '%' && !format[1]))
 	return (-1);
-
 va_start(list_of_args, format);
 while (*format)
 {
@@ -40,6 +39,10 @@ while (*format)
 		{
 			print_char(*format, &char_print);
 	}
+	}
+	else
+	{
+		print_char(*format, &char_print);
 	}
 	format++;
 }
