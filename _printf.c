@@ -40,6 +40,8 @@ while (*format)
 
 		print_str(str, &char_print);
 	}
+		else 
+print_char(*format, &char_print);
 	}
 	format++;
 }
