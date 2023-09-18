@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <unistd.h>
 
-#define OUTPUT_BUF_SIZE 1024
+#define BUFF_SIZE 1024
 #define BUF_FLUSH -1
 
 /* Function prototype for _printf */
