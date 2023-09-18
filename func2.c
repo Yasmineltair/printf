@@ -7,9 +7,14 @@
 */
 void print_buffer(char buffer[], int *buff_ind)
 {
+int i = 0;
+
 if (*buff_ind > 0)
 {
-write(1, &buffer[0], *buff_ind);
-*buff_ind = 0;
+	while (i < *buff_ind)
+	{
+		write(1, buffer, i);
+	}
 }
+*buff_ind = 0;
 }
