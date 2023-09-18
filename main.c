@@ -16,6 +16,19 @@ int main(void)
 
     len = _printf("Let's try to printf a simple sentence.\n");
     len2 = printf("Let's try to printf a simple sentence.\n");
+   _printf("%s", "this is my name!\n");
+   _printf("this is my %s\n", "hala");
+   _printf("%c%ctt%s%siuimhjh\n", 'w', 'y', "no", "po");
+   _printf("%%\n");
+   _printf("this is the percentage sign: %%\n");
+   _printf("%c\n", 54);
+   _printf("%c\n", 'r');
+   _printf("a yoyo is a %c\n", 'y');
+   _printf("NULL\n");
+   _printf("%c\n", '\0');
+   printf("%c\n", '\0');
+   _printf("%\n");
+   printf("%\n");
     ui = (unsigned int)INT_MAX + 1024;
     addr = (void *)0x7ffe637541f0;
     _printf("Length:[%d, %i]\n", len, len);
