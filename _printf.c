@@ -23,10 +23,11 @@ while (*format)
 	}
 	else
 	{
-		format++;
 		if (*format == '\0')
 			print_char(*format, &char_print);
-	else if (*format == '%')
+		else
+			format++;
+	 if (*format == '%')
 		{
 		print_char(*format, &char_print);
 	}
