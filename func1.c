@@ -29,12 +29,12 @@ void print_str(char *str, int *char_print)
 
 while (*str)
 {
-buffer[buff_ind++] = *str;
-str++;
+	buffer[buff_ind++] = *str;
+	str++;
 if (buff_ind == BUFF_SIZE)
 {
-		print_buffer(buffer, &buff_ind);
-*char_print += buff_ind;
+	print_buffer(buffer, &buff_ind);
+	*char_print += buff_ind;
 }
 }
 }
