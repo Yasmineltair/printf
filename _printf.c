@@ -37,7 +37,7 @@ while (*format)
 	{
 		char *str = va_arg(list_of_args, char*);
 
-		print_str(str, char_print);
+		print_str(str, &char_print);
 	}
 	}
 	format++;
