@@ -13,39 +13,38 @@ va_list list_of_args;
 
 if (format == NULL || (format[0] == '%' && !format[1]))
 	return (-1);
+if (format[0] == '%' && format[1] == ' ' && !format[2])
+	return (-1);
 va_start(list_of_args, format);
 while (*format)
 {
-	if (*format == '%')
+	if (*format != '%')
+	{
+		char_print += print_char(*format);
+	}
+	else
 	{
 		format++;
-		if (*format == '%')
-		{
-		print_char(*format, &char_print);
+	if (*format == '%')
+	{
+		 char_print += print_char(*format);
 	}
 	else if (*format == 'c')
 	{
 		char c = va_arg(list_of_args, int);
 
-		print_char(c, &char_print);
+		char_print += print_char(c);
 	}
 	else if (*format == 's')
 	{
 		char *str = va_arg(list_of_args, char*);
 
-		print_str(str, &char_print);
-	}
-		else
-		{
-			print_char(*format, &char_print);
+		char_print += print_str(str);
 	}
 	}
-	else
-	{
-		print_char(*format, &char_print);
-	}
-		format++;
+	format++;
 }
+
 va_end(list_of_args);
 return (char_print);
 }

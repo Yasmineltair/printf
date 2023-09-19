@@ -1,5 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
+
 #include <stdarg.h>
 #include <stdio.h>
 #include <unistd.h>
@@ -11,8 +12,7 @@
 int _printf(const char *format, ...);
 
 /* Function prototypes for additional print functions */
-void print_char(char c, int *char_print);
-void print_str(char *str, int *char_print);
-void print_buffer(char buffer[], int *buff_ind);
+int print_char(int c);
+int print_str(char *str);
 
 #endif /* MAIN_H */
