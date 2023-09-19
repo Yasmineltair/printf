@@ -16,8 +16,6 @@ void print_str(char *str, int *char_print)
 	str_len++;
 	(*char_print)++;
 	}
-	}
-	return (str_len);
 }
 
 /**
