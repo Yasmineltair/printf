@@ -14,13 +14,10 @@ void print_str(char *str, int *char_print)
 	{
 	write(1, &str[str_len], 1);
 	str_len++;
-<<<<<<< HEAD
 	(*char_print)++;
 	}
-=======
 	}
 	return (str_len);
->>>>>>> 12cb5b9849b3d20f9cbc458e16ef9064e3360f65
 }
 
 /**
