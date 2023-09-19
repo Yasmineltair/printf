@@ -1,48 +1,48 @@
 #include "main.h"
-
 /**
   * _printf - function that produces output
   * @format: a character string
   * Return: the number of characters printed
   */
-
 int _printf(const char *format, ...)
 {
-	int char_print = 0;
+	int len = 0, i = 0;
 	va_list list_of_args;
 
-	if (format == NULL || (format[0] == '%' && !format[1]))
+	if (format == NULL)
 	return (-1);
 va_start(list_of_args, format);
-while (*format)
+while (format[i])
 {
 	if (*format != '%')
 	{
-		print_char(*format, &char_print);
+		len += print_char(format[i]);
 	}
 	else
 	{
-		format++;
-		if (*format == '%')
+		if (format[i] == '%')
 	{
-		print_char(*format, &char_print);
+		len += print_char(format[i]);
 	}
-	else if (*format == 'c')
+	else if (format[i] == 'c')
 	{
 		char c = va_arg(list_of_args, int);
 
-		print_char(c, &char_print);
+		len += print_char(c);
 	}
-	else if (*format == 's')
+	else if (format[i] == 's')
 	{
 		char *str = va_arg(list_of_args, char*);
 
-		print_str(str, &char_print);
+		len += print_str(str);
 	}
+		else
+		{
+			print_char(format[i]);
+		}
 	}
-	format++;
+	i++;
 }
-
 va_end(list_of_args);
-return (char_print);
+return (i);
 }

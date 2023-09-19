@@ -3,11 +3,10 @@
 /**
   * print_str - function to print string
   * @str : string to print
-  * @char_print: print iterator
-  * Return: void
+  * Return: string length
   */
 
-void print_str(char *str, int *char_print)
+int print_str(char *str)
 {
 	int str_len = 0;
 
@@ -15,18 +14,19 @@ void print_str(char *str, int *char_print)
 	{
 	write(1, &str[str_len], 1);
 	str_len++;
-	(*char_print)++;
+	}
+	return (str_len);
 	}
 }
 
 /**
   * print_char - function to print character
   * @c: character to print
-  * @char_print: print iterator
+  * Return: success 1
   */
 
-void print_char(char c, int *char_print)
+int print_char(char c)
 {
 write(1, &c, 1);
-(*char_print)++;
+return (1);
 }
