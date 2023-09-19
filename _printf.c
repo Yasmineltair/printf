@@ -13,7 +13,6 @@ int _printf(const char *format, ...)
 
 	if (format == NULL || (format[0] == '%' && !format[1]))
 	return (-1);
-
 va_start(list_of_args, format);
 while (*format)
 {
@@ -24,9 +23,9 @@ while (*format)
 	else
 	{
 		format++;
-	if (*format == '%')
+		if (*format == '%')
 	{
-		 print_char(*format, &char_print);
+		print_char(*format, &char_print);
 	}
 	else if (*format == 'c')
 	{
@@ -43,6 +42,7 @@ while (*format)
 	}
 	format++;
 }
+
 va_end(list_of_args);
 return (char_print);
 }
