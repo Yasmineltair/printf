@@ -30,12 +30,16 @@ static char buf[BUFF_SIZE];
 
 if (c != BUF_FLUSH)
 {
+	if (i >= BUFF_SIZE)
+	{
+		write(1, buf, i);
+	i = 0;
+	}
 	buf[i++] = c;
-}
-if (c == BUF_FLUSH || i >= BUFF_SIZE)
+	}
+else if (i > 0)
 {
-	write(1, buf, i);
 	i = 0;
 }
-	return (1);
+return (1);
 }
