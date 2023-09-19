@@ -24,46 +24,22 @@ while (*format)
 	else
 	{
 		format++;
-		if (*format == '\0')
-			break;
-		else if (*format == '%')
+	if (*format == '%')
 	{
 		 print_char(*format, &char_print);
 	}
-		else if (*format == 'c')
+	else if (*format == 'c')
 	{
 		char c = va_arg(list_of_args, int);
 
-	va_start(list_of_args, format);
-
-	while (*format)
+		print_char(c, &char_print);
+	}
+	else if (*format == 's')
 	{
-		if (*format != '%')
-		{
-			print_char(*format, &char_print);
-		}
-		else
-		{
-			format++;
-		if (*format == '%')
-		{
-			print_char(*format, &char_print);
-		}
-		else if (*format == 'c')
-		{
-			char c = va_arg(list_of_args, int);
+		char *str = va_arg(list_of_args, char*);
 
-			print_char(c, &char_print);
-		}
-		else if (*format == 's')
-		{
-			char *str = va_arg(list_of_args, char*);
-
-			print_str(str, char_print);
-		}
-
-		print_str(str, &char_print);
-		}
+		print_str(str, char_print);
+	}
 	}
 	format++;
 }
