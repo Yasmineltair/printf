@@ -44,5 +44,5 @@ while (format[i])
 	i++;
 }
 va_end(list_of_args);
-return (i);
+return (len);
 }

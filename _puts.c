@@ -16,7 +16,6 @@ int print_str(char *str)
 	str_len++;
 	}
 	return (str_len);
-	}
 }
 
 /**
