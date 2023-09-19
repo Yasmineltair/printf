@@ -7,14 +7,14 @@
   * Return: void
   */
 
-void print_str(char *str, int *char_print)
+void print_str(char *str, int char_print)
 {
 	int str_len = 0;
 
 	while (str[str_len] != '\0')
 	{
 	str_len++;
-	print_char(*str++, int *char_print);
+	print_char(*str++, &char_print);
 	char_print += str_len;
 	}
 }
@@ -44,5 +44,5 @@ else if (i > 0)
 {
 	i = 0;
 }
-char_print++;
+(*char_print)++;
 }
