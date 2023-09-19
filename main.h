@@ -12,7 +12,7 @@
 int _printf(const char *format, ...);
 
 /* Function prototypes for additional print functions */
-void print_char(int c, int *char_print);
-void print_str(char *str, int char_print);
+void print_char(char c, int *char_print);
+void print_str(char *str, int *char_print);
 
 #endif /* MAIN_H */
