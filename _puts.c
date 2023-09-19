@@ -3,27 +3,30 @@
 /**
   * print_str - function to print string
   * @str : string to print
-  * Return: string length
+  * @char_print: print iterator
+  * Return: void
   */
 
-int print_str(char *str)
+void print_str(char *str, int *char_print)
 {
-	char *start = str;
+	int str_len = 0;
 
-	while (*str)
+	while (str[str_len] != '\0')
 	{
-		print_char(*str++);
+	str_len++;
+	print_char(*str++, int *char_print);
+	char_print += str_len;
 	}
-	return (str - start);
 }
 
 /**
   * print_char - function to print character
   * @c: character to print
+  * @char_print: print iterator
   * Return: 1 on success
   */
 
-int print_char(int c)
+void print_char(int c, int *char_print)
 {
 static int i;
 static char buf[BUFF_SIZE];
@@ -41,5 +44,5 @@ else if (i > 0)
 {
 	i = 0;
 }
-return (1);
+char_print++;
 }

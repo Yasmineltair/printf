@@ -20,26 +20,26 @@ while (*format)
 {
 	if (*format != '%')
 	{
-		char_print += print_char(*format);
+		print_char(*format, &char_print);
 	}
 	else
 	{
 		format++;
 	if (*format == '%')
 	{
-		 char_print += print_char(*format);
+		 print_char(*format, &char_print);
 	}
 	else if (*format == 'c')
 	{
 		char c = va_arg(list_of_args, int);
 
-		char_print += print_char(c);
+		print_char(c, &char_print);
 	}
 	else if (*format == 's')
 	{
 		char *str = va_arg(list_of_args, char*);
 
-		char_print += print_str(str);
+		print_str(str, &char_print);
 	}
 	}
 	format++;
