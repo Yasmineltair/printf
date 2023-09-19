@@ -43,5 +43,10 @@ while (*format)
 	format++;
 }
 va_end(list_of_args);
+<<<<<<< HEAD
 return (char_print);
 }
+=======
+return (i);
+}
+>>>>>>> 12cb5b9849b3d20f9cbc458e16ef9064e3360f65
