@@ -3,10 +3,10 @@
 /**
   * print_str - function to print string
   * @str : string to print
-  * Return: string length
+  * @char_print: pointer to ch count
   */
 
-int print_str(char *str)
+void print_str(char *str, int *char_print)
 {
 	int str_len = 0;
 
@@ -14,18 +14,23 @@ int print_str(char *str)
 	{
 	write(1, &str[str_len], 1);
 	str_len++;
+	(*char_print)++;
 	}
+<<<<<<< HEAD
+=======
+	}
+>>>>>>> 0ae33cdaba63ddd0242329831ada749eb33f50aa
 	return (str_len);
 }
 
 /**
   * print_char - function to print character
   * @c: character to print
-  * Return: success 1
+  * @char_print: a pointer to ch counter
   */
 
-int print_char(char c)
+void print_char(char c, int *char_print)
 {
 write(1, &c, 1);
-return (1);
+(*char_print)++;
 }
