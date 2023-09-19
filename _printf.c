@@ -23,11 +23,13 @@ while (*format)
 	else
 	{
 		format++;
-	if (*format == '%')
+		if (*format == '\0')
+			break;
+		else if (*format == '%')
 	{
 		 print_char(*format, &char_print);
 	}
-	else if (*format == 'c')
+		else if (*format == 'c')
 	{
 		char c = va_arg(list_of_args, int);
 
@@ -37,12 +39,11 @@ while (*format)
 	{
 		char *str = va_arg(list_of_args, char*);
 
-		print_str(str, char_print);
+		print_str(str, &char_print);
 	}
 	}
 	format++;
 }
-
 va_end(list_of_args);
 return (char_print);
 }
