@@ -13,8 +13,7 @@ int _printf(const char *format, ...)
 
 	if (format == NULL || (format[0] == '%' && !format[1]))
 	return (-1);
-<<<<<<< HEAD
-=======
+
 va_start(list_of_args, format);
 while (*format)
 {
@@ -34,7 +33,6 @@ while (*format)
 		else if (*format == 'c')
 	{
 		char c = va_arg(list_of_args, int);
->>>>>>> ce976231a21e430a3803f6ccae38e7918900234e
 
 	va_start(list_of_args, format);
 
@@ -55,7 +53,6 @@ while (*format)
 		{
 			char c = va_arg(list_of_args, int);
 
-<<<<<<< HEAD
 			print_char(c, &char_print);
 		}
 		else if (*format == 's')
@@ -64,10 +61,9 @@ while (*format)
 
 			print_str(str, char_print);
 		}
-=======
+
 		print_str(str, &char_print);
-	}
->>>>>>> ce976231a21e430a3803f6ccae38e7918900234e
+		}
 	}
 	format++;
 }
