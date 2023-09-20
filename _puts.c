@@ -16,11 +16,6 @@ void print_str(char *str, int *char_print)
 	str_len++;
 	(*char_print)++;
 	}
-<<<<<<< HEAD
-=======
-	}
->>>>>>> 0ae33cdaba63ddd0242329831ada749eb33f50aa
-	return (str_len);
 }
 
 /**

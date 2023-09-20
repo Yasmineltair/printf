@@ -9,7 +9,7 @@ int _printf(const char *format, ...)
 	int char_print = 0;
 	va_list list_of_args;
 
-	if (format == NULL)
+	if (format == NULL || (format[0] == '%' && !format[1]))
 	return (-1);
 va_start(list_of_args, format);
 while (*format)
@@ -43,11 +43,5 @@ while (*format)
 	format++;
 }
 va_end(list_of_args);
-<<<<<<< HEAD
-return (len);
-=======
 return (char_print);
->>>>>>> 0ae33cdaba63ddd0242329831ada749eb33f50aa
 }
-
-
